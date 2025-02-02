@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+
+.feedback-text {
+  position: absolute;
+  top: -50px; /* Start above the green circle */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  font-weight: bold;
+  color: yellow;
+  font-family: 'Luckiest Guy', cursive;
+  animation: fadeMove 0.8s ease-in-out;
+  opacity: 0;
+}
+
+@keyframes fadeMove {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+}
+/* Button styles */
+.menu-button {
+  width: 100%;
+  padding: 15px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #333;
+  color: white;
+  border: 3px solid #00aaff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.menu-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: radial-gradient(circle, rgba(0, 170, 255, 0.3), rgba(0, 170, 255, 0));
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.5s ease;
+  border-radius: 50%;
+  z-index: 0;
+}
+
+.menu-button:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.menu-button:hover {
+  background-color: #444;
+  border-color: #00aaff;
+  color: #00aaff;
+  transform: scale(1.05);
+}
+
+.menu-button:active {
+  transform: scale(0.95);
+}
+
+.menu-button span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Back button specific styles */
+.back-button {
+  position: absolute;
+  top: 10px;
+  left: 1320px;
+  padding: 0.5rem 1rem;
+  background-color: #333;
+  color: white;
+  border: 3px solid #00aaff;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
